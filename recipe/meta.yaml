@@ -32,7 +32,7 @@ requirements:
     - omniorb-libs
     - libhdbpp
     - libpqxx =6.4
-    - spdlog >=1.9,<1.10
+    - spdlog
 
 test:
   commands:
