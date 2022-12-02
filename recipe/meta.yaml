@@ -8,9 +8,11 @@ package:
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
   sha256: 068681d6e33c76cd05c35685f285934cca740d04213bb47a9e77b5fb8164f3ea
+  patches:
+    - 0001-Add-define-in-AttributeTraits-to-be-backward-compati.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
@@ -32,7 +34,7 @@ requirements:
     - omniorb-libs
     - libhdbpp
     - libpqxx =6.4
-    - spdlog >=1.9,<1.10
+    - spdlog
 
 test:
   commands:
