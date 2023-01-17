@@ -48,7 +48,10 @@ test:
 outputs:
   - name: "libhdbpp-timescale"
     files:
-      - lib/cmake/libhdbpp-timescale/
+      - "lib/libhdb++timescale.so"
+      - "lib/libhdb++timescale.so.2"
+      - "lib/libhdb++timescale.so.{{ version }}"     
+      - "lib/cmake/libhdbpp-timescale/"
 
   - name: "libhdbpp-timescale-dbg"
     requirements:
