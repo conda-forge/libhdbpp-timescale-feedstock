@@ -57,9 +57,10 @@ outputs:
       run:
         - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"
     files:
-      commands: 
-        - "lib/libhdb++timescale.so.{{ version }}.dbg"
-        
+      - "lib/libhdb++timescale.so.{{ version }}.dbg"
+    test:
+      commands:
+        - "test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}.${PKG_VERSION}.dbg"
 about:
   home: https://www.tango-controls.org
   license: LGPL-3.0-or-later
