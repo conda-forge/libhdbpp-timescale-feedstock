@@ -1,5 +1,5 @@
 cmake ${CMAKE_ARGS} \
-      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -S . -B build
 
 cmake --build build -j $CPU_COUNT
