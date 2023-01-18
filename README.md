@@ -56,6 +56,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libhdbpp--timescale-green.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libhdbpp-timescale.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libhdbpp-timescale.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libhdbpp-timescale.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libhdbpp--timescale--dbg-green.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale-dbg) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libhdbpp-timescale-dbg.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale-dbg) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libhdbpp-timescale-dbg.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale-dbg) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libhdbpp-timescale-dbg.svg)](https://anaconda.org/conda-forge/libhdbpp-timescale-dbg) |
 
 Installing libhdbpp-timescale
 =============================
@@ -67,16 +68,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `libhdbpp-timescale` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `libhdbpp-timescale, libhdbpp-timescale-dbg` can be installed with `conda`:
 
 ```
-conda install libhdbpp-timescale
+conda install libhdbpp-timescale libhdbpp-timescale-dbg
 ```
 
 or with `mamba`:
 
 ```
-mamba install libhdbpp-timescale
+mamba install libhdbpp-timescale libhdbpp-timescale-dbg
 ```
 
 It is possible to list all of the versions of `libhdbpp-timescale` available on your platform with `conda`:
