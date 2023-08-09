@@ -12,7 +12,7 @@ source:
     - 0001-Add-define-in-AttributeTraits-to-be-backward-compati.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
