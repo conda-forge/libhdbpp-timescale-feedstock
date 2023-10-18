@@ -1,5 +1,5 @@
 {% set name = "libhdbpp-timescale" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
-  sha256: 068681d6e33c76cd05c35685f285934cca740d04213bb47a9e77b5fb8164f3ea
+  sha256: 16c7178a740f085cfa24e3af6311eca966375e00835b7918f39964e7dda634b4
   patches:
     - 0001-Add-define-in-AttributeTraits-to-be-backward-compati.patch
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
@@ -50,7 +50,7 @@ outputs:
     files:
       - "lib/libhdb++timescale.so"
       - "lib/libhdb++timescale.so.2"
-      - "lib/libhdb++timescale.so.{{ version }}"     
+      - "lib/libhdb++timescale.so.{{ version }}"
       - "lib/cmake/libhdbpp-timescale/"
 
   - name: "libhdbpp-timescale-dbg"
