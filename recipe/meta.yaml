@@ -8,8 +8,6 @@ package:
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
   sha256: 16c7178a740f085cfa24e3af6311eca966375e00835b7918f39964e7dda634b4
-  patches:
-    - 0001-Add-define-in-AttributeTraits-to-be-backward-compati.patch
 
 build:
   number: 0
