@@ -1,5 +1,5 @@
 {% set name = "libhdbpp-timescale" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,20 +7,18 @@ package:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
-  sha256: 068681d6e33c76cd05c35685f285934cca740d04213bb47a9e77b5fb8164f3ea
-  patches:
-    - 0001-Add-define-in-AttributeTraits-to-be-backward-compati.patch
+  sha256: 6c8a9a906c29932bacb3ca68b5e8a164fd4ead7aa7965870d6889e9dbc201869
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
     - libhdbpp
   # Prevent libhdb++timescale.so.{{ version }}.dbg to be modified
   # Will raise CRC mismatch otherwise!
-  binary_relocation:
-    - "lib/libhdb++timescale.so.{{ version }}"
+  binary_relocation:                               # [linux]
+    - "lib/libhdb++timescale.so.{{ version }}"     # [linux]
   run_exports:
     - {{ pin_subpackage('libhdbpp-timescale', max_pin='x.x') }}
 
@@ -33,8 +31,7 @@ requirements:
     - pkg-config
   host:
     - cppzmq
-    - cpptango <9.4
-    - omniorb
+    - cpptango
     - omniorb-libs
     - libhdbpp
     - libpqxx =6.4
@@ -45,23 +42,23 @@ test:
     - test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}
     - test -f ${PREFIX}/lib/cmake/libhdbpp-timescale/libhdbpp-timescaleConfig.cmake
 
-outputs:
-  - name: "libhdbpp-timescale"
-    files:
-      - "lib/libhdb++timescale.so"
-      - "lib/libhdb++timescale.so.2"
-      - "lib/libhdb++timescale.so.{{ version }}"     
-      - "lib/cmake/libhdbpp-timescale/"
+outputs:                                                                              # [linux]
+  - name: "libhdbpp-timescale"                                                        # [linux]
+    files:                                                                            # [linux]
+      - "lib/libhdb++timescale.so"                                                    # [linux]
+      - "lib/libhdb++timescale.so.2"                                                  # [linux]
+      - "lib/libhdb++timescale.so.{{ version }}"                                      # [linux]
+      - "lib/cmake/libhdbpp-timescale/"                                               # [linux]
 
-  - name: "libhdbpp-timescale-dbg"
-    requirements:
-      run:
-        - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"
-    files:
-      - "lib/libhdb++timescale.so.{{ version }}.dbg"
-    test:
-      commands:
-        - "test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}.${PKG_VERSION}.dbg"
+  - name: "libhdbpp-timescale-dbg"                                                    # [linux]
+    requirements:                                                                     # [linux]
+      run:                                                                            # [linux]
+        - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"                    # [linux]
+    files:                                                                            # [linux]
+      - "lib/libhdb++timescale.so.{{ version }}.dbg"                                  # [linux]
+    test:                                                                             # [linux]
+      commands:                                                                       # [linux]
+        - "test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}.${PKG_VERSION}.dbg"    # [linux]
 about:
   home: https://www.tango-controls.org
   license: LGPL-3.0-or-later
