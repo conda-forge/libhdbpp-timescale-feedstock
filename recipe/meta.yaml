@@ -31,8 +31,7 @@ requirements:
     - pkg-config
   host:
     - cppzmq
-    - cpptango <9.4
-    - omniorb
+    - cpptango
     - omniorb-libs
     - libhdbpp
     - libpqxx =6.4
