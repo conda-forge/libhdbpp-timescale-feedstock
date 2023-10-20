@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
-  sha256: 16c7178a740f085cfa24e3af6311eca966375e00835b7918f39964e7dda634b4
+  sha256: 6c8a9a906c29932bacb3ca68b5e8a164fd4ead7aa7965870d6889e9dbc201869
 
 build:
   number: 0
