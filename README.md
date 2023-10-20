@@ -56,20 +56,6 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango9.5" alt="variant">
                 </a>
               </td>
-            </tr><tr>
-              <td>osx_64_cpptango9.4</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cpptango9.4" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_cpptango9.5</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cpptango9.5" alt="variant">
-                </a>
-              </td>
             </tr>
           </tbody>
         </table>
