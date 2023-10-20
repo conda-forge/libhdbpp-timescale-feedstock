@@ -11,14 +11,14 @@ source:
 
 build:
   number: 0
-  skip: true  # [not linux]
+  skip: true  # [win]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
     - libhdbpp
   # Prevent libhdb++timescale.so.{{ version }}.dbg to be modified
   # Will raise CRC mismatch otherwise!
-  binary_relocation:
-    - "lib/libhdb++timescale.so.{{ version }}"
+  binary_relocation:                               # [linux]
+    - "lib/libhdb++timescale.so.{{ version }}"     # [linux]
   run_exports:
     - {{ pin_subpackage('libhdbpp-timescale', max_pin='x.x') }}
 
@@ -42,23 +42,23 @@ test:
     - test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}
     - test -f ${PREFIX}/lib/cmake/libhdbpp-timescale/libhdbpp-timescaleConfig.cmake
 
-outputs:
-  - name: "libhdbpp-timescale"
-    files:
-      - "lib/libhdb++timescale.so"
-      - "lib/libhdb++timescale.so.2"
-      - "lib/libhdb++timescale.so.{{ version }}"
-      - "lib/cmake/libhdbpp-timescale/"
+outputs:                                                                              # [linux]
+  - name: "libhdbpp-timescale"                                                        # [linux]
+    files:                                                                            # [linux]
+      - "lib/libhdb++timescale.so"                                                    # [linux]
+      - "lib/libhdb++timescale.so.2"                                                  # [linux]
+      - "lib/libhdb++timescale.so.{{ version }}"                                      # [linux]
+      - "lib/cmake/libhdbpp-timescale/"                                               # [linux]
 
-  - name: "libhdbpp-timescale-dbg"
-    requirements:
-      run:
-        - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"
-    files:
-      - "lib/libhdb++timescale.so.{{ version }}.dbg"
-    test:
-      commands:
-        - "test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}.${PKG_VERSION}.dbg"
+  - name: "libhdbpp-timescale-dbg"                                                    # [linux]
+    requirements:                                                                     # [linux]
+      run:                                                                            # [linux]
+        - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"                    # [linux]
+    files:                                                                            # [linux]
+      - "lib/libhdb++timescale.so.{{ version }}.dbg"                                  # [linux]
+    test:                                                                             # [linux]
+      commands:                                                                       # [linux]
+        - "test -f ${PREFIX}/lib/libhdb++timescale${SHLIB_EXT}.${PKG_VERSION}.dbg"    # [linux]
 about:
   home: https://www.tango-controls.org
   license: LGPL-3.0-or-later
