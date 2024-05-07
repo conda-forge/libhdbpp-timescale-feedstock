@@ -10,7 +10,7 @@ source:
   sha256: 6c8a9a906c29932bacb3ca68b5e8a164fd4ead7aa7965870d6889e9dbc201869
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
@@ -27,6 +27,7 @@ requirements:
     - cmake
     - make
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - libtool
     - pkg-config
   host:
