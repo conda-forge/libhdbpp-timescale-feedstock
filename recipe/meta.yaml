@@ -28,7 +28,6 @@ requirements:
     - make
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
-    - libtool
     - pkg-config
   host:
     - cppzmq
@@ -37,6 +36,8 @@ requirements:
     - libhdbpp
     - libpqxx =6.4
     - spdlog
+    # not compatible with fmt 10
+    - fmt =9
 
 test:
   commands:
