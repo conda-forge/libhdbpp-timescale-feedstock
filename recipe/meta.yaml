@@ -8,6 +8,9 @@ package:
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
   sha256: 487fa68e2218fe674f86833da1bfb93882f9ef3620b08c4ff996b997d41ea021
+  patches:
+    # https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/issues/26#note_2075416425
+    - fmt10_compatibility.patch
 
 build:
   number: 1
