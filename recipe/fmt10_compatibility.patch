@@ -1,0 +1,75 @@
+From 17308537ce09009cf96b867eee33c54a5346c664 Mon Sep 17 00:00:00 2001
+From: Thomas Braun <thomas.braun@byte-physics.de>
+Date: Tue, 9 Apr 2024 11:35:22 +0200
+Subject: [PATCH] src: Fix compilation with fmt > 10
+
+The define FMT_DEPRECATED_OSTREAM was removed in that version. Therefore we now
+have to add explicit template specializations to make stringifying custom types
+work.
+---
+ src/AttributeTraits.hpp | 5 +++++
+ src/DbConnection.tpp    | 2 ++
+ src/LibUtils.hpp        | 6 ++++++
+ 3 files changed, 13 insertions(+)
+
+diff --git a/src/AttributeTraits.hpp b/src/AttributeTraits.hpp
+index e706c07..c72cb6f 100644
+--- a/src/AttributeTraits.hpp
++++ b/src/AttributeTraits.hpp
+@@ -33,6 +33,8 @@
+ #include <iostream>
+ #include <tango/tango.h>
+ 
++#include <fmt/ostream.h>
++
+ // why is it OmniORB (via Tango)) and Pqxx define these types in different ways? Perhaps
+ // its the autotools used to configure them? Either way, we do not use tango, just need its
+ // types, so undef and allow the Pqxx defines to take precedent
+@@ -107,4 +109,7 @@ private:
+ };
+ 
+ } // namespace hdbpp_internal
++
++template <> struct fmt::formatter<hdbpp_internal::AttributeTraits> : ostream_formatter {};
++
+ #endif // _ATTRIBUTE_TRAITS_H
+diff --git a/src/DbConnection.tpp b/src/DbConnection.tpp
+index 4191dcb..16a0a91 100644
+--- a/src/DbConnection.tpp
++++ b/src/DbConnection.tpp
+@@ -22,6 +22,8 @@
+ 
+ #include "PqxxExtension.hpp"
+ 
++#include "AttributeTraits.hpp"
++
+ #include <pqxx/params.hxx>
+ namespace hdbpp_internal
+ {
+diff --git a/src/LibUtils.hpp b/src/LibUtils.hpp
+index c61a864..3c62d60 100644
+--- a/src/LibUtils.hpp
++++ b/src/LibUtils.hpp
+@@ -24,6 +24,8 @@
+ #include <tango/tango.h>
+ #include <type_traits>
+ 
++#include <fmt/ostream.h>
++
+ // spdlog includes used by them module
+ #include "spdlog/fmt/ostr.h"
+ #include "spdlog/spdlog.h"
+@@ -36,6 +38,10 @@
+ #undef HAVE_SYS_TIME_H
+ #undef HAVE_POLL
+ 
++template <> struct fmt::formatter<Tango::AttrDataFormat> : ostream_formatter {};
++template <> struct fmt::formatter<Tango::CmdArgType> : ostream_formatter {};
++template <> struct fmt::formatter<Tango::AttrQuality> : ostream_formatter {};
++
+ namespace hdbpp_internal
+ {
+ // generic output operator for classes
+-- 
+GitLab
+
