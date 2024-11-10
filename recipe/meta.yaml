@@ -39,8 +39,7 @@ requirements:
     - libhdbpp
     - libpqxx =6.4
     - spdlog
-    # not compatible with fmt 10
-    - fmt =9
+    - fmt
 
 test:
   commands:
