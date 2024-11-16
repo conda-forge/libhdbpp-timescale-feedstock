@@ -34,10 +34,8 @@ requirements:
     - cpptango
     - omniorb-libs
     - libhdbpp
-    - libpqxx =6.4
+    - libpqxx
     - spdlog
-    # not compatible with fmt 10
-    - fmt =9
 
 test:
   commands:
