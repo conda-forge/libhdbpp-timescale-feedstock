@@ -1,5 +1,6 @@
 cmake ${CMAKE_ARGS} \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DBUILD_SHARED_LIBS=ON \
       -S . -B build
 
 cmake --build build -j $CPU_COUNT
