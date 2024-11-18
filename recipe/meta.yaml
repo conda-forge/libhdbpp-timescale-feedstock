@@ -36,6 +36,7 @@ requirements:
     - libhdbpp
     - libpqxx
     - spdlog
+    - fmt
 
 test:
   commands:
