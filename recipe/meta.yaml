@@ -1,5 +1,5 @@
 {% set name = "libhdbpp-timescale" %}
-{% set version = "2.4.0" %}
+{% set version = "2.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
-  sha256: c5055ca2b5031dc8f776f5ce4aa54ee5d9345bc39dd637bdb60b613f28f9f38c
+  sha256: 42b0b395e6a83861d1e2dd9906be101e183c9059a4670d06753bae48fd6434f3
 
 build:
   number: 0
