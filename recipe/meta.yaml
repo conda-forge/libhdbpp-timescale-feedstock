@@ -34,8 +34,7 @@ requirements:
     - cpptango
     - omniorb-libs
     - libhdbpp
-    # See https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/issues/33#note_2727264158
-    - libpqxx <7
+    - libpqxx
     - spdlog
     - fmt
 
