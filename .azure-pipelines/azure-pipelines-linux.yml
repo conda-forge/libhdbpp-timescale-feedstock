@@ -8,6 +8,14 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
+      linux_64_cpptango10.0:
+        CONFIG: linux_64_cpptango10.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_64_cpptango10.1:
+        CONFIG: linux_64_cpptango10.1
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_cpptango9.3:
         CONFIG: linux_64_cpptango9.3
         UPLOAD_PACKAGES: 'True'
