@@ -1,5 +1,5 @@
 {% set name = "libhdbpp-timescale" %}
-{% set version = "2.4.1" %}
+{% set version = "2.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/{{ version }}/libhdbpp-timescale-{{ version }}.tar.gz
-  sha256: 42b0b395e6a83861d1e2dd9906be101e183c9059a4670d06753bae48fd6434f3
+  sha256: b22b6a818b50253dc18e70c3bc0022a24abb284408eac0456d8d30c664ec4db0
 
 build:
-  number: 6
+  number: 0
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
@@ -34,8 +34,7 @@ requirements:
     - cpptango
     - omniorb-libs
     - libhdbpp
-    # See https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/issues/33#note_2727264158
-    - libpqxx <7
+    - libpqxx
     - spdlog
     - fmt
 
@@ -59,7 +58,7 @@ outputs:   # [linux]
         # different versions per cpptango
         - cpptango                                                                    # [linux]
       run:   # [linux]
-        - "{{ pin_subpackage('libhdbpp-timescale', exact=True) }}"                    # [linux]
+        - {{ pin_subpackage('libhdbpp-timescale', exact=True) }}                    # [linux]
     files:   # [linux]
       - "lib/libhdb++timescale.so.{{ version }}.dbg"                                  # [linux]
     test:   # [linux]
