@@ -67,7 +67,7 @@ outputs:   # [linux]
 about:
   home: https://www.tango-controls.org
   license: LGPL-3.0-or-later
-  license_file: LICENSE
+  license_file: COPYING.LESSER
   summary: HDB++ library for Timescale database back-end
   description: |
     HDB++ is an archiving system for Tango-Controls.
