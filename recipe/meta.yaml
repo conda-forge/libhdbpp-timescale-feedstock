@@ -10,7 +10,7 @@ source:
   sha256: c22adee57d619421cb257f4d39da531e2dc5639362c6079166cfa0c8f96c5840
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   # Library doesn't link against libhdbpp (only headers used)
   ignore_run_exports:
