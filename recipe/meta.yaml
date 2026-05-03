@@ -25,7 +25,7 @@ build:
 requirements:
   build:
     - cmake
-    - make
+    - ninja
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - pkg-config

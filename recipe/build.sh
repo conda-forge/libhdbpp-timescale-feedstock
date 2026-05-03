@@ -1,13 +1,14 @@
 cmake ${CMAKE_ARGS} \
+      -G Ninja \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DBUILD_SHARED_LIBS=ON \
       -S . -B build
 
-cmake --build build -j $CPU_COUNT
+cmake --build build
 cmake --build build --target install
 
 # Separate debugging symbols on Linux
-if [ ! -z "${OBJCOPY}" ]
+if [ -n "${OBJCOPY}" ]
 then
   ${OBJCOPY} --only-keep-debug ${PREFIX}/lib/libhdb++timescale.so.${PKG_VERSION} ${PREFIX}/lib/libhdb++timescale.so.${PKG_VERSION}.dbg
   chmod 664 ${PREFIX}/lib/libhdb++timescale.so.${PKG_VERSION}.dbg
