@@ -3,7 +3,7 @@ About libhdbpp-timescale-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libhdbpp-timescale-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.tango-controls.org
+Home: https://www.tango-controls.org/
 
 Package license: LGPL-3.0-or-later
 
@@ -11,71 +11,17 @@ Summary: HDB++ library for Timescale database back-end
 
 Development: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale
 
-Documentation: https://tango-controls.readthedocs.io/en/latest/tools-and-extensions/archiving/HDB++.html
+Documentation: https://tango-controls.readthedocs.io/en/latest/Explanation/archiving/hdbpp.html
 
 HDB++ is an archiving system for Tango-Controls.
 This library is used by events subscribers to archive events from a Tango Controls system.
 libhdbpp-timescale is the HDB++ backend library for the TimescaleDb extenstion to Postgresql.
-
 
 Current build status
 ====================
 
 
 <table>
-    
-  <tr>
-    <td>Azure</td>
-    <td>
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_64_cpptango10.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango10.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cpptango10.1</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango10.1" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cpptango9.3</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango9.3" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cpptango9.4</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango9.4" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_cpptango9.5</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17724&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libhdbpp-timescale-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cpptango9.5" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-  </tr>
 </table>
 
 Current release info
