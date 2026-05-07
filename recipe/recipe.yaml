@@ -54,10 +54,10 @@ outputs:
           then:
             - lib/libhdb++timescale.so
             - lib/libhdb++timescale.so.2
-            - lib/libhdb++timescale.so.{{ version }}
+            - lib/libhdb++timescale.so.${{ version }}
             - lib/cmake/libhdbpp-timescale/**
       dynamic_linking:
-        # Prevent libhdb++timescale.so.{{ version }}.dbg to be modified
+        # Prevent libhdb++timescale.so.${{ version }}.dbg to be modified
         # Will raise CRC mismatch otherwise!
         binary_relocation:
           - if: linux
