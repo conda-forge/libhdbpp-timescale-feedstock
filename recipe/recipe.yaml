@@ -56,13 +56,6 @@ outputs:
             - lib/libhdb++timescale.so.2
             - lib/libhdb++timescale.so.${{ version }}
             - lib/cmake/libhdbpp-timescale/**
-      dynamic_linking:
-        # Prevent libhdb++timescale.so.${{ version }}.dbg to be modified
-        # Will raise CRC mismatch otherwise!
-        binary_relocation:
-          - if: linux
-            then:
-              - lib/libhdb++timescale.so.${{ version }}
     requirements:
       run_exports:
         - ${{ pin_subpackage('libhdbpp-timescale', upper_bound='x.x') }}
@@ -83,6 +76,10 @@ outputs:
     build:
       skip:
         - not linux
+      dynamic_linking:
+        # Prevent libhdb++timescale.so.${{ version }}.dbg to be modified
+        # Will raise CRC mismatch otherwise!
+        binary_relocation: false
       files:
         - lib/libhdb++timescale.so.${{ version }}.dbg
     requirements:
