@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.4.3"
+  version: "2.4.5"
 
 recipe:
   name: libhdbpp-timescale-split
@@ -9,10 +9,10 @@ recipe:
 
 source:
   url: https://gitlab.com/tango-controls/hdbpp/libhdbpp-timescale/-/archive/${{ version }}/libhdbpp-timescale-${{ version }}.tar.gz
-  sha256: c22adee57d619421cb257f4d39da531e2dc5639362c6079166cfa0c8f96c5840
+  sha256: 25efb8e9df54de3464dba7cc3b0921240eb5279bab3721040f84574d5773572c
 
 build:
-  number: 2
+  number: 0
   skip:
     - not linux
 
